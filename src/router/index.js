@@ -1,27 +1,92 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Recommend from '@/router/Recommend'
+import Frontend from '@/router/Frontend'
+import Backend from '@/router/backend'
+import Ios from '@/router/Ios'
+import Android from '@/router/Android'
+import Post from '@/router/post'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    redirect: '/recommend',
+    meta: {
+      // 控制在某路由下是否展示顶部和底部导航栏
+      showNav: true
+    }
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/recommend',
+    component: Recommend,
+    meta: {
+      showNav: true
+    }
+  },
+  {
+    path: '/frontend',
+    component: Frontend,
+    meta: {
+      showNav: true
+    }
+  },
+  {
+    path: '/backend',
+    component: Backend,
+    meta: {
+      showNav: true
+    }
+  },
+  {
+    path: '/IOS',
+    component: Ios,
+    meta: {
+      showNav: true
+    }
+  },
+  {
+    path: '/Android',
+    component: Android,
+    meta: {
+      showNav: true
+    }
+  },
+  {
+    path: '/history',
+    component: () => import('@/router/History'),
+    meta: {
+      showNav: false
+    }
+  },
+  {
+    path: '/post/:articleId',
+    component: Post,
+    meta: {
+      showNav: false
+    }
   }
+  // component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  // 平滑滚动
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })
 
+// // 路由切换时屏幕自动滚动到顶端
+// router.afterEach((to, from, next) => {
+//   window.scrollTo(0, 0)
+//   // 或
+//   // window.scroll(0, 0);
+// })
 export default router
