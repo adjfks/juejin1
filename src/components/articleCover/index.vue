@@ -113,7 +113,6 @@ export default {
     gotoPost () {
       // 将文章id存放进全局数组
       this.$history.push(this.articleId)
-      console.log('history', this.$history)
       this.$router.push(`/post/${this.articleId}`)
     }
   },

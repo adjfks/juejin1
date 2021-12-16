@@ -76,7 +76,6 @@ export default {
       if (this.hasMore) {
         const res = await this.$getCommentsByArticleId(this.articleId, this.offset, this.limit)
         if (res.code === 0) {
-          console.log(res)
           // 更新offset
           this.offset += this.limit
           // 更新hasMore
