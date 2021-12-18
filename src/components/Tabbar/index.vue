@@ -10,6 +10,8 @@
 </template>
 
 <script>
+// bus用于与sort组件传值
+import bus from '@/utils/bus.js'
 export default {
   data () {
     return {
@@ -34,13 +36,30 @@ export default {
     }
   },
   methods: {
+    // 滚动回顶部
+    toTop () {
+      let top = document.documentElement.scrollTop || document.body.scrollTop
+      // 实现滚动效果
+      const timeTop = setInterval(() => {
+        document.body.scrollTop = document.documentElement.scrollTop = top -= 50
+        if (top <= 0) {
+          clearInterval(timeTop)
+        }
+      }, 10)
+    },
     getHot () {
       this.current = 0
-      this.$router.push({ path: this.currentRoute, query: { sort: 'hot' } })
+      if (this.$route.query && this.$route.query.sort !== 'hot') {
+        return this.$router.push({ path: this.currentRoute, query: { sort: 'hot' } })
+      }
+      this.toTop()
     },
     getNew () {
       this.current = 1
-      this.$router.push({ path: this.currentRoute, query: { sort: 'new' } })
+      if (this.$route.query && this.$route.query.sort !== 'new') {
+        return this.$router.push({ path: this.currentRoute, query: { sort: 'new' } })
+      }
+      this.toTop()
     },
     goHistory () {
       this.current = 2
@@ -52,6 +71,12 @@ export default {
       // 路由路径变化，tabbar第一项高亮
       this.current = 0
     }
+  },
+  created () {
+    bus.$on('changeSecondCategory', (val) => {
+      this.current = val
+      this.$router.push({ path: this.currentRoute, query: { sort: 'hot' } })
+    })
   }
 }
 </script>

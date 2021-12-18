@@ -33,7 +33,6 @@ export default {
     async getData () {
       const res = await this.$getCategories()
       // 获取全部分类标签，保存到列表里，每一项是一个对象，包含category_id和category_name属性
-      // console.log(res)
       this.categories = res.data.categories
     },
     // 编程式导航

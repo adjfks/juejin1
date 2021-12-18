@@ -9,7 +9,8 @@
 </template>
 
 <script>
-
+// 导入bus.js，当点击新的二级分类标签时，让底部tab切换到hot
+import bus from '@/utils/bus.js'
 export default {
   data () {
     return {
@@ -28,6 +29,8 @@ export default {
       // 选中变色
       this.currentSelect = index
       this.$emit('getNewCategory', id)
+      // 通知底部tab切换到hot
+      bus.$emit('changeSecondCategory', 0)
     }
   },
   created () {

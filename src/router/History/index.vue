@@ -44,12 +44,10 @@ export default {
         const res = await this.$getArticleById(this.$history[i])
         this.articleList.unshift(res.data.article)
       }
-      console.log(this.articleList)
     }
   },
   created () {
     this.getArticle()
-    console.log(this.articleList, 222222222)
   }
 }
 </script>
