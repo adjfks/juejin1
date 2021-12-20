@@ -5,13 +5,13 @@
       <div class="articleInfo">
         <label class="author">{{authorName}}</label>
         <span>|</span>
-        <label>{{days}}天前</label>
+        <label>{{days}}</label>
         <span>|</span>
         <label>{{secCategoty}}</label>
       </div>
       <div class="main-container">
         <!-- 标题简要内容 -->
-        <div class="main-left" :style="{'max-width':leftWidth}">
+        <div class="main-left" :style="{'max-width': leftWidth }">
           <h1>{{title}}</h1>
           <p>{{briefContent}}</p>
           <!-- 点赞评论数 -->
@@ -40,7 +40,7 @@
         </div>
         <!-- 图片区 -->
         <div class="main-right">
-          <img :src="cover ? cover : '@/assets/images/defaultCover.png'" :onerror="errorImage" alt="pic" id="cover">
+          <img :src="cover !== '' ? cover : '@/assets/images/defaultCover.png'" :onerror="errorImage" alt="pic" id="cover" v-if="this.cover">
         </div>
       </div>
     </div>
@@ -52,6 +52,7 @@ export default {
   data: function () {
     return {
       fullWidth: document.documentElement.clientWidth,
+      // 图片请求失败时替换为默认封面
       errorImage: 'this.src="' + require('@/assets/images/defaultCover.png') + '"'
     }
   },
@@ -97,12 +98,17 @@ export default {
   },
   computed: {
     days () {
-      return parseInt(parseInt(this.time) / 1000 / 60 / 60 / 24)
+      const res = parseInt((Date.parse(new Date()) - parseInt(this.time) * 1000) / 1000 / 60 / 60 / 24)
+      if (res < 30) return Math.floor(res / 7) + '周前'
+      if (res < 180) return Math.floor(res / 30) + '月前'
+      if (res < 365) return '半年前'
+      if (res >= 365) return Math.floor(res / 365) + '年前'
+      return parseInt((Date.parse(new Date()) - parseInt(this.time) * 1000) / 1000 / 60 / 60 / 24)
     },
     // 计算左侧标题和简要内容宽度，实现自适应屏幕
     leftWidth () {
       const rightWidth = '145'
-      return (this.fullWidth - rightWidth - 20) + 'px'
+      return this.cover ? (this.fullWidth - rightWidth - 20) + 'px' : (this.fullWidth - 20) + 'px'
     }
   },
   methods: {

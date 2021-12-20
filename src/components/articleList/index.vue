@@ -2,7 +2,7 @@
 <div id="articleList">
   <ArticleCover
   v-for="item in artList"
-  :key="item.article_id"
+  :key="item.article_id + item.category_info.second_category_name"
   :title="item.article_info.title"
   :cover="item.article_info.cover_image"
   :authorName="item.author_user_info.user_name"
@@ -78,6 +78,9 @@ export default {
   created () {
     this.getCurrentArticles()
     window.addEventListener('scroll', this.onload)
+  },
+  updated () {
+
   },
   watch: {
     query (newQuery, oldQuery) {

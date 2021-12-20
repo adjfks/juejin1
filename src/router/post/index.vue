@@ -1,7 +1,7 @@
 <template>
 <div class="post-container">
   <Toptabbar>文章详情</Toptabbar>
-  <div id="post">
+  <div id="post" >
     <!-- 文章信息 -->
     <div class="article-info clearfix">
       <!-- 文章标题 -->
@@ -90,6 +90,7 @@ export default {
   #post{
   padding: 30px 30px;
   background-color: #fff;
+  // background:url('@/assets/images/bg1.png');
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   /* 文章信息 */
