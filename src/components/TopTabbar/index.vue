@@ -25,7 +25,7 @@ export default {
 
 <style scoped lang="less">
 #top-tabbar{
-  height: 50px;
+  height: 32px;
   background-color: #fff;
   .top-tabbar-container{
     background-color: #fff;

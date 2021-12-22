@@ -88,9 +88,8 @@ export default {
 .post-container{
   background-color: #f4f5f5;
   #post{
-  padding: 30px 30px;
+  padding: 0 30px;
   background-color: #fff;
-  // background:url('@/assets/images/bg1.png');
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   /* 文章信息 */

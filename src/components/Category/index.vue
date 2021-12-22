@@ -56,7 +56,7 @@ export default {
   .category-container{
   z-index: 2000;
   position: fixed;
-  top: 0;
+  top: 50px;
   left: 0;
   right: 0;
   display: flex;

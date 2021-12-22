@@ -42,7 +42,6 @@ export default {
     ArticleCover,
     PullLoading
   },
-
   computed: {
     query () {
       return this.$route.query.sort
@@ -79,9 +78,6 @@ export default {
     this.getCurrentArticles()
     window.addEventListener('scroll', this.onload)
   },
-  updated () {
-
-  },
   watch: {
     query (newQuery, oldQuery) {
       if (newQuery !== oldQuery) {
@@ -96,9 +92,6 @@ export default {
     currentCategoryId () {
       this.getCurrentArticles()
     }
-  },
-  mounted () {
-
   }
 }
 </script>

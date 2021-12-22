@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <HomeTop>首页</HomeTop>
     <Category></Category>
     <router-view></router-view>
     <Tabbar></Tabbar>
@@ -9,11 +10,12 @@
 <script>
 import Category from './components/Category'
 import Tabbar from './components/Tabbar'
-
+import HomeTop from './components/homeTop'
 export default {
   components: {
     Category,
-    Tabbar
+    Tabbar,
+    HomeTop
   }
 }
 </script>

@@ -1,0 +1,32 @@
+#category .category-container,
+#sort,
+#sort .label-link,
+.artContainer,
+#tabbar .tabbar-container,
+body,
+#top-tabbar .top-tabbar-container,
+.post-container #post,
+#comment-bg .comment-container,
+.post-container,
+#comment-bg .comment-container .comment-text,
+#comment-bg .more-comment-button,
+#top-tabbar .top-tabbar-container,
+#top-tabbar {
+  background-color: #000 !important;
+}
+
+* {
+  color: #86909c !important;
+}
+
+#sort .label-link {
+  border: 1px solid #fff;
+}
+
+#comment-bg .comment-container .comment-text {
+  border: 1px solid #fff;
+}
+
+#comment-bg .more-comment-button {
+  border: 1px solid #fff;
+}
