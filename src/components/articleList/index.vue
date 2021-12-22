@@ -63,13 +63,15 @@ export default {
           // 正在加载
           this.isloading = true
           const newArticles = await this.$getArticles(this.currentCategoryId, this.query, this.offset, this.limit)
-          // 更新offset
-          this.offset += 10
-          // 没有更多
-          this.hasMore = newArticles.has_more
-          this.artList.push(...newArticles.data.articles)
-          // 加载结束
-          this.isloading = false
+          if (newArticles.code === 0) {
+            // 更新offset
+            this.offset += 10
+            // 没有更多
+            this.hasMore = newArticles.has_more
+            this.artList.push(...newArticles.data.articles)
+            // 加载结束
+            this.isloading = false
+          }
         }
       }
     }
