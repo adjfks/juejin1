@@ -9,15 +9,10 @@
 </template>
 
 <script>
-
 export default {
-  methods: {
-  },
-  created () {
-
-  }
 }
 </script>
+
 <style scoped lang="less">
 #loading{
   height: 20px;

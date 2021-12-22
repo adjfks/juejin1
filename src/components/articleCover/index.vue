@@ -51,7 +51,8 @@
 export default {
   data: function () {
     return {
-      fullWidth: document.documentElement.clientWidth,
+      // fullWidth: document.documentElement.clientWidth,
+      fullWidth: document.body.clientWidth,
       // 图片请求失败时替换为默认封面
       errorImage: 'this.src="' + require('@/assets/images/defaultCover.png') + '"'
     }

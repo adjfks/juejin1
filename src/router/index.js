@@ -2,10 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Recommend from '@/router/Recommend'
 import Frontend from '@/router/Frontend'
-import Backend from '@/router/backend'
+import Backend from '@/router/Backend'
 import Ios from '@/router/Ios'
 import Android from '@/router/Android'
-import Post from '@/router/post'
+import Post from '@/router/Post'
 
 Vue.use(VueRouter)
 
@@ -67,8 +67,6 @@ const routes = [
       showNav: false
     }
   }
-  // component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-
 ]
 
 const router = new VueRouter({
@@ -82,11 +80,4 @@ const router = new VueRouter({
     }
   }
 })
-
-// // 路由切换时屏幕自动滚动到顶端
-// router.afterEach((to, from, next) => {
-//   window.scrollTo(0, 0)
-//   // 或
-//   // window.scroll(0, 0);
-// })
 export default router

@@ -53,9 +53,7 @@ export default {
     }
   },
   created () {
-    // console.log(this.reply, 'replay')
     this.replyInfo = this.reply.reply_infos
-    // console.log(this.replyInfo, 'replys')
   }
 }
 </script>

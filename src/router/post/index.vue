@@ -42,7 +42,7 @@
 <script>
 import Toptabbar from '@/components/TopTabbar'
 // 导入评论组件
-import Comment from '@/components/comment'
+import Comment from '@/components/Comment'
 export default {
   data () {
     return {

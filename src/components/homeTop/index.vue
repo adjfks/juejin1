@@ -69,6 +69,9 @@ export default {
       text-align: center;
       color:#1e80ff;
       font-size: 20px;
+      &:hover{
+        cursor: pointer;
+      }
     }
 
     .logo{

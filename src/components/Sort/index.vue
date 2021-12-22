@@ -52,6 +52,9 @@ export default {
     font-size: 14px;
     margin-left: 10px;
     margin-top: 10px;
+    &:hover{
+      cursor: pointer;
+    }
   }
   .active {
     color: #fff;

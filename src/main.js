@@ -7,9 +7,8 @@ import { getCategories, getArticleById, getArticles, getCommentsByArticleId } fr
 // 引入字体图标
 import '@/assets/fonts/iconfont.css'
 // 导入文章列表组件
-import ArticleList from '@/components/articleList'
-//
-import Show from '@/components/show'
+import ArticleList from '@/components/ArticleList'
+import Show from '@/components/Show'
 // 挂载方法
 Vue.config.productionTip = false
 Vue.prototype.$getCategories = getCategories

@@ -1,6 +1,5 @@
 <template>
   <div id="history-container">
-
     <div class="top">
       <Toptabbar>浏览历史&nbsp;{{this.$history.length}}</Toptabbar>
     </div>
@@ -26,7 +25,7 @@
 <script>
 import Toptabbar from '@/components/TopTabbar'
 // 导入封面列表组件
-import ArticleCover from '@/components/articleCover'
+import ArticleCover from '@/components/ArticleCover'
 export default {
   data () {
     return {

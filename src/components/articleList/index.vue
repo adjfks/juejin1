@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import ArticleCover from '@/components/articleCover'
-import PullLoading from '@/components/pullLoading'
+import ArticleCover from '@/components/ArticleCover'
+import PullLoading from '@/components/PullLoading'
 import { scrollTop, documentHeight, windowHeight } from '@/utils/scroll'
 export default {
   data () {

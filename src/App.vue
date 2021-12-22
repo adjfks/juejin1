@@ -10,7 +10,7 @@
 <script>
 import Category from './components/Category'
 import Tabbar from './components/Tabbar'
-import HomeTop from './components/homeTop'
+import HomeTop from './components/HomeTop'
 export default {
   components: {
     Category,

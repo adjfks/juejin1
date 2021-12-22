@@ -49,7 +49,7 @@
 
 <script>
 // 导入回复组件
-import Reply from '@/components/reply.vue'
+import Reply from '@/components/Reply.vue'
 export default {
   data () {
     return {
